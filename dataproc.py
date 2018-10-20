@@ -51,6 +51,7 @@ class DataProcessor:
                     out_file.write(self.df.to_csv())
                 elif fformat == ".json":
                     out_file.write(self.df.to_json())
+        print("Wrote data in file "+filename)
 
 
     def __repr__(self):
@@ -60,6 +61,7 @@ class DataProcessor:
 if __name__=="__main__":
 
     dp = DataProcessor("myData")
-    dp.get_data('https://launchlibrary.net/1.4/agency/NASA')
+    dp.get_data('https://launchlibrary.net/1.4/agency')
+    dp.write_back("apollo")
     dp.show()
 	
